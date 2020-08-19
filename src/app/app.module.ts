@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ListtodoComponent } from './listtodo/listtodo.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ListtodoComponent } from './listtodo/listtodo.component';
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    ListtodoComponent
+    ListtodoComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

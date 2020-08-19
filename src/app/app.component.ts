@@ -1,31 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { ToDoModel } from 'src/Interfaces/ToDoModel';
-import { Observable } from 'rxjs';
-import  {map } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent  implements OnInit {
+export class AppComponent  {
   title = 'todolist';
-  getTodo = 'https://localhost:5001/todo/getbyactivity?activity=Watch';
-  alltodo = 'https://localhost:5001/todo/getall';
 
 
-  constructor(private httpClient: HttpClient){}
+
+  constructor(){}
 
 
-   todoList : Observable<ToDoModel[]>;
 
-    ngOnInit(): void {
-      this.todoList = this.httpClient.get<ToDoModel[]>(this.alltodo);
-      console.log(this.todoList);
-    }
-
-  AddToButton(event){
-    alert('Gel');
-  }
 }

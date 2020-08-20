@@ -1,3 +1,4 @@
+import { AuthGuard } from './guards/auth.guard';
 import { ListtodoComponent } from './listtodo/listtodo.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AppComponent } from './app.component';
@@ -11,7 +12,7 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
    {path:"login", component: LoginComponent},
    {path:"register", component: RegisterComponent},
-   {path:"todo-all",component: ListtodoComponent},
+   {path:"todo-all",component: ListtodoComponent,canActivate:[AuthGuard]},
    {path:"", component: HomeComponent},
    {path:"**",component: PageNotFoundComponent}
 ];

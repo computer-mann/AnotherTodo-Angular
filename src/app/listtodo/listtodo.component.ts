@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ToDoModel } from 'src/Interfaces/ToDoModel';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -19,7 +19,11 @@ export class ListtodoComponent implements OnInit {
   todoList: Observable<ToDoModel[]>;
 
   ngOnInit(): void {
-    this.todoList = this.httpClient.get<ToDoModel[]>(this.alltodo);
+    let headersNow=new HttpHeaders();
+    let bearerAuth = 'Bearer ' + sessionStorage.getItem('token');
+    console.log(bearerAuth);
+    headersNow.append('Authorization',bearerAuth);
+    this.todoList = this.httpClient.get<ToDoModel[]>(this.alltodo,{headers: headersNow});
     console.log(this.todoList);
   }
 

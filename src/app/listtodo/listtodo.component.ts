@@ -19,12 +19,16 @@ export class ListtodoComponent implements OnInit {
   todoList: Observable<ToDoModel[]>;
 
   ngOnInit(): void {
-    let headersNow=new HttpHeaders();
     let bearerAuth = 'Bearer ' + sessionStorage.getItem('token');
-    console.log(bearerAuth);
-    headersNow.append('Authorization',bearerAuth);
-    this.todoList = this.httpClient.get<ToDoModel[]>(this.alltodo,{headers: headersNow});
-    console.log(this.todoList);
+
+    let httpOptions={
+      headers:new HttpHeaders({
+        Authorization: bearerAuth
+      })
+    };
+
+    this.todoList = this.httpClient.get<ToDoModel[]>(this.alltodo,httpOptions);
+
   }
 
   AddToButton(event) {

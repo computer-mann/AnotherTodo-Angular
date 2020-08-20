@@ -30,4 +30,8 @@ export class AuthService {
   isLoggedIn():boolean{
     return !!sessionStorage.getItem('token');
   }
+
+  removeAccessToken(){
+    sessionStorage.removeItem('token');
+  }
 }

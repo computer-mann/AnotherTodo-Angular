@@ -1,7 +1,13 @@
 
+  <div *ngIf="loggedIn == false">
 
-  <a [routerLink]="['/login']" class="btn">Login</a>
+    <a [routerLink]="['/login']" class="btn">Login</a>
 
-  <a [routerLink]="['/register']" class="btn">Register</a>
+    <a [routerLink]="['/register']" class="btn">Register</a>
+
+  </div>
+<div *ngIf="loggedIn">
+  <button (click)="logoutFunction($event)" class="btn">Logout</button>
+</div>
 
   <a [routerLink]="['/todo-all']" class="btn">Your Todo List</a>

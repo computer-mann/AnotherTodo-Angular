@@ -1,3 +1,4 @@
+<a routerLink="/" class="btn">Home</a>
 <div class="page-content page-container" id="page-content">
   <div class="padding">
     <div class="row container d-flex justify-content-center">
@@ -14,7 +15,10 @@
 
                 <li *ngFor="let todo of todoList | async">
                   <div class="form-check"> <label class="form-check-label">
-                      <input class="checkbox" type="checkbox"> {{todo.activity}} <i class="input-helper"></i></label>
+                      <input class="checkbox" type="checkbox">
+                        <p (click)="goToDetails(todo.id)">{{todo.activity}} </p>
+
+                        <i class="input-helper"></i></label>
                   </div> <i class="remove mdi mdi-close-circle-outline"></i>
                 </li>
               </ul>

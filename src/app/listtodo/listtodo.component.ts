@@ -1,3 +1,5 @@
+import { TodoServiceService } from './../services/todo-service.service';
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ToDoModel } from 'src/Interfaces/ToDoModel';
@@ -14,21 +16,19 @@ export class ListtodoComponent implements OnInit {
   getTodo = 'https://localhost:5001/todo/getbyactivity?activity=Watch';
   alltodo = 'https://localhost:5001/todo/getall';
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private todoService:TodoServiceService,private router:Router) { }
 
   todoList: Observable<ToDoModel[]>;
 
   ngOnInit(): void {
-    let bearerAuth = 'Bearer ' + sessionStorage.getItem('token');
 
-    let httpOptions={
-      headers:new HttpHeaders({
-        Authorization: bearerAuth
-      })
-    };
 
-    this.todoList = this.httpClient.get<ToDoModel[]>(this.alltodo,httpOptions);
+    this.todoList = this.todoService.getAllTodos();
 
+  }
+
+  goToDetails(objectId:string){
+    this.router.navigate(['/todo-details',objectId]);
   }
 
   AddToButton(event) {

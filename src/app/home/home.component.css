@@ -1,3 +1,12 @@
 .btn{
   margin:40px;
 }
+
+.todo-btn{
+  background-color: black;
+  color: chartreuse;
+}
+
+.username{
+  margin-left: 60%;
+}

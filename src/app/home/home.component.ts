@@ -15,9 +15,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.loggedIn=this.authService.isLoggedIn();
+
   }
 
-  logoutFunction(event){
+  logoutFunction(event):void{
     this.authService.removeAccessToken();
     this.loggedIn = this.authService.isLoggedIn();
 

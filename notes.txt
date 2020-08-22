@@ -9,9 +9,6 @@ https://localhost:5001/todo/create
 https://localhost:5001/todo/getbyactivity?activity=Watch
 https://localhost:5001/todo/getall
 
-npm install @mdi/font
-npm install bootstrap
-ng add @ng-bootstrap/ng-bootstrap
 
 
 =======================================================================================================

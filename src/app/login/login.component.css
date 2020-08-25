@@ -595,3 +595,7 @@ button {
     stroke-dashoffset: 0;
   }
 }
+
+.errorMessage{
+  color: red;
+}

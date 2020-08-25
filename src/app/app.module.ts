@@ -1,3 +1,4 @@
+
 import { TodoServiceService } from './services/todo-service.service';
 import { AuthGuard } from './guards/auth.guard';
 import { AuthService } from './services/auth.service';
@@ -14,7 +15,7 @@ import { ListtodoComponent } from './listtodo/listtodo.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 import { TodoDetailComponent } from './todo-detail/todo-detail.component';
 
 
@@ -34,7 +35,7 @@ import { TodoDetailComponent } from './todo-detail/todo-detail.component';
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgbModule
+
   ],
   providers: [AuthService,AuthGuard,TodoServiceService],
   bootstrap: [AppComponent]

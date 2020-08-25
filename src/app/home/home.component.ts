@@ -29,6 +29,7 @@ export class HomeComponent implements OnInit {
   }
 
   logoutFunction(event):void{
+    this.authService.logout();
     this.authService.removeAccessToken();
     this.loggedIn = this.authService.isLoggedIn();
 

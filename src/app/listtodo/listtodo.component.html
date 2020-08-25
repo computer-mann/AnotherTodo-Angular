@@ -16,8 +16,8 @@
                 <li *ngFor="let todo of todoList | async">
                   <div class="form-check"> <label class="form-check-label">
                       <input class="checkbox" type="checkbox">
-                        <p (click)="goToDetails(todo.id)">{{todo.activity}} </p>
-
+                        <!-- <p (click)="goToDetails(todo.id)">{{todo.activity}} </p> -->
+                        <a [routerLink]="['/todo-details',todo.id]"> {{todo.activity}}</a>
                         <i class="input-helper"></i></label>
                   </div> <i class="remove mdi mdi-close-circle-outline"></i>
                 </li>

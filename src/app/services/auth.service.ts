@@ -1,4 +1,4 @@
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -9,6 +9,7 @@ export class AuthService {
 
    registerUrl="https://localhost:5001/account/register";
    loginUrl="https://localhost:5001/account/login"
+  logOutUrl ="https://localhost:5001/account/logout";
   constructor(private httpClient:HttpClient) { }
 
   login(formData):Observable<HttpResponse<any>>{
@@ -17,6 +18,10 @@ export class AuthService {
 
   register(formData):Observable<HttpResponse<any>>{
     return this.httpClient.post<any>(this.registerUrl, formData, { observe: 'response' });
+  }
+
+  logout(){
+    this.httpClient.post<any>(this.logOutUrl,{},this.addAuthToken()).subscribe();
   }
 
   getAccessToken():string{
@@ -33,5 +38,17 @@ export class AuthService {
 
   removeAccessToken(){
     sessionStorage.removeItem('token');
+  }
+
+  addAuthToken(): object {
+    let bearerAuth = 'Bearer ' + sessionStorage.getItem('token');
+
+    let httpOptions = {
+      headers: new HttpHeaders({
+        Authorization: bearerAuth
+      })
+    };
+
+    return httpOptions;
   }
 }

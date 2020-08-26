@@ -1,12 +1,12 @@
-import { TodoDetailComponent } from './todo-detail/todo-detail.component';
-import { AuthGuard } from './guards/auth.guard';
-import { ListtodoComponent } from './listtodo/listtodo.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { RegisterComponent } from './register/register.component';
-import { LoginComponent } from './login/login.component';
+import { TodoDetailComponent } from '../todo-detail/todo-detail.component';
+import { AuthGuard } from '../guards/auth.guard';
+import { ListtodoComponent } from '../listtodo/listtodo.component';
+import { PageNotFoundComponent } from '../page-not-found/page-not-found.component';
+import { RegisterComponent } from '../register/register.component';
+import { LoginComponent } from '../login/login.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from '../home/home.component';
 
 
 const routes: Routes = [

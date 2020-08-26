@@ -1,10 +1,8 @@
 import { TodoServiceService } from './../services/todo-service.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ToDoModel } from 'src/Interfaces/ToDoModel';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-listtodo',

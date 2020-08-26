@@ -23,8 +23,10 @@ export class HomeComponent implements OnInit {
 
        var decoded=jwt_decode(sessionStorage.getItem('token'));
        this.username=decoded.unique_name;
-     console.log(decoded);
-     console.log(new Date(decoded.nbf));
+      var exp = decoded.exp;
+     console.log(decoded.exp);
+
+      console.log('decoded.exp',new Date(exp * 1000));
     }
   }
 

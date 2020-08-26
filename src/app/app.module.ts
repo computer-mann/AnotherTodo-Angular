@@ -17,6 +17,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { TodoDetailComponent } from './todo-detail/todo-detail.component';
+import { BootstrapNgModule } from './customModules/bootstrap-ng.module';
+
 
 
 @NgModule({
@@ -35,6 +37,7 @@ import { TodoDetailComponent } from './todo-detail/todo-detail.component';
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    BootstrapNgModule
 
   ],
   providers: [AuthService,AuthGuard,TodoServiceService],
